@@ -1,4 +1,4 @@
-start
+; start
 
 
 ;GeeeTech A20M start script
@@ -23,7 +23,7 @@ G1 X220 Y0 Z0.2 E20 ;purge line
 
 
 
-end
+; end
 
 
 G91 ; relative position

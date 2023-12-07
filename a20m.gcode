@@ -2,23 +2,23 @@
 
 
 ;GeeeTech A20M start script
+G0 F5000 ; set move speed
 M140 S{material_bed_temperature_layer_0} ;set bed temp
 M104 S165 ;set extruder temp
 G28 ;home
-M666 X10 ; apply X offset
+G0 F5000 ; set move speed
 G29 ;Level Bed
-; M420 S1 ; enable using level data
-; G28 ;home ; homing after level disables level data!
 G90 ; absolute positioning
-; M83 ; extruder relative mode - dont use
 G92 E0 ; set Extruder position to 0 for multiple prints in the same session
-G0 F1000 ; set move speed
+G0 F5000 ; set move speed
 G1 X0 Y0 Z10 E0 ;go to wait position
 M104 S{material_print_temperature_layer_0} ;set extruder temp
 M190 S{material_bed_temperature_layer_0} ;wait for bed temp
 M109 S{material_print_temperature_layer_0} ;wait for extruder temp
 G0 Z0.2 ;set extruder height
-G0 F500 ; Set speed for purge
+G0 F1000 ; Set speed for purge
+G92 X-10
+G0 X0 Y0 Z10 ;go to wait position
 G1 X220 Y0 Z0.2 E20 ;purge line
 ;end of start script
 

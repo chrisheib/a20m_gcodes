@@ -6,11 +6,11 @@ M140 S{material_bed_temperature_layer_0} ;set bed temp
 M104 S165 ;set extruder temp
 G28 ;home
 G29 ;Level Bed
-M420 S1 ; enable using level data
-G28 ;home
-G90 ;absolute positioning
-M666 X10
-; M83 ;extruder relative mode - dont use
+; M420 S1 ; enable using level data
+; G28 ;home ; homing after level disables level data!
+G90 ; absolute positioning
+M666 X10 ; apply X offset
+; M83 ; extruder relative mode - dont use
 G92 E0 ; set Extruder position to 0 for multiple prints in the same session
 G0 F1000 ; set move speed
 G1 X0 Y0 Z10 E0 ;go to wait position
